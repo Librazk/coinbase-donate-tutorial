@@ -47,12 +47,108 @@ $ php composer-setup.php
 $ php -r "unlink('composer-setup.php');" 
 ```
 
+This will generate a composer.phar file which you will be able to use in any PHP project to install dependencies. 
+
 #### 3. Obtain the [Heroku Toolbelt](https://toolbelt.heroku.com/)
+This will help you manage and deploy Heroku Apps.
 Once downloaded, you can enter your Heroku credentials via the following command:
 
 ```
 $ heroku login
 ```
+
+You are now ready to create your first Heroku App.
+
+### Create Heroku App 
+
+#### Setup
+create a folder where your Heroku project will reside. Create another folder inside which will contain the actual code for your website:
+
+```
+$ mkdir myapp
+$ cd myapp
+$ mkdir web
+```
+
+Create a file called composer.json and populate it with the following code:
+
+```json
+{
+  "require-dev" : {
+  	"heroku/heroku-buildpack-php": "*"
+  }
+}
+```
+
+This file is what Composer uses to download the dependencies. 
+In order to download the dependancies, copy the composer.phar file we generated earlier to this 'myapp' folder and run the following command:
+
+```
+$ php composer.phar install
+```
+
+After the dependancies are created, create an index.php file in the 'web' folder, populate it with the following code:
+
+```PHP
+<?php include_once("index.html");?>
+```
+
+All this script does is tell the server to load the index.html file when someone accesses the website. Create an index.html file in the same 'web' folder and insert the code generated for your Donate Button inside the body. 
+The following is just an example, you will use your own <a> link when populating your own index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Random title</title>
+</head>
+<body>
+	<a class="coinbase-button" data-code="b30a0e523fc911c51e31badbd1e8b52c" data-button-style="custom_large" href="https://www.coinbase.com/checkouts/b30a0e523fc911c51e31badbd1e8b52c">Donate BTC!</a><script src="https://www.coinbase.com/assets/button.js" type="text/javascript"></script>
+</body>
+</html>
+```
+
+Finally, before we can deploy on Heroku, we need to create one more file called Procfile in the main 'myapp' folder.
+Put the following line in this file:
+
+```
+web: vendor/bin/heroku-php-apache2 web/
+```
+
+When your app is deployed on Heroku, this file tells the server how to run your app. In this case, it uses an apache server to run whatever is inside the web folder.
+
+#### Deploy!
+You are finally ready to deploy your project. 
+
+Initialize a git repository:
+
+```
+$ git init
+$ git add . && git commit -m "Initial Commit"
+```
+
+use the following command to link to a Heroku Remote:
+
+```
+$ heroku create
+```
+
+Deploy your project by pushing to the Heroku remote:
+
+```
+$ git push heroku remote
+```
+
+View your project in a browser!
+
+```
+$ heroku open
+```
+
+
+
+
 
 
 
