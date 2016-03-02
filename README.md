@@ -16,7 +16,7 @@ If you wish to accept BTC payments on your account, you must also set up a merch
 Go to the profile tab and create your merchant account. You can enter fake information since this is just a sandbox account. 
 Once created, you'll notice that the "Merchants" section is now visible on the left menu (see image below)
 
-[Screen](http://i.imgur.com/mNhRY65.png)
+![Screen](http://i.imgur.com/mNhRY65.png)
 
 ### Create Donate Button
 
