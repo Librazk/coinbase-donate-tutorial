@@ -36,5 +36,16 @@ Since we're only interested in a simple HTML website, we'll be using PHP as our 
 
 #### 1. Install [PHP](http://php.net/)
 
+#### 2. Get [Composer](https://getcomposer.org/)
+Composer is a dependency manager for PHP. We will need it to obtain the heroku dependencies for our proect. 
+You can download and install composer from the terminal by running the following commands:
+
+```
+$ php -r "readfile('https://getcomposer.org/installer');" > composer-setup.php
+$ php -r "if (hash('SHA384', file_get_contents('composer-setup.php')) === 'fd26ce67e3b237fffd5e5544b45b0d92c41a4afe3e3f778e942e43ce6be197b9cdc7c251dcde6e2a52297ea269370680') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); }"
+$ php composer-setup.php
+$ php -r "unlink('composer-setup.php');" 
+```
+
 
 
