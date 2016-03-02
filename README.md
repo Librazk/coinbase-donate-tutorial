@@ -47,5 +47,12 @@ $ php composer-setup.php
 $ php -r "unlink('composer-setup.php');" 
 ```
 
+#### 3. Obtain the [Heroku Toolbelt](https://toolbelt.heroku.com/)
+Once downloaded, you can enter your Heroku credentials via the following command:
+
+```
+$ heroku login
+```
+
 
 
