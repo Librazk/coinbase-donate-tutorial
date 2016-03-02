@@ -104,6 +104,7 @@ The following is just an example, you will use your own <a> link when populating
 	<title>Random title</title>
 </head>
 <body>
+	<!-- Insert your Donate Button here -->
 	<a class="coinbase-button" data-code="b30a0e523fc911c51e31badbd1e8b52c" data-button-style="custom_large" href="https://www.coinbase.com/checkouts/b30a0e523fc911c51e31badbd1e8b52c">Donate BTC!</a><script src="https://www.coinbase.com/assets/button.js" type="text/javascript"></script>
 </body>
 </html>
